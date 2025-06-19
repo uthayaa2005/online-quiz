@@ -47,28 +47,7 @@ const Navbar = () => {
               </Link>
             </li>
 
-            <li className="relative group">
-              <span className="block py-2 px-3 cursor-pointer hover:text-sky-600 transition-colors duration-200">
-                Categories
-              </span>
-              <ul className="absolute hidden group-hover:block bg-white shadow-xl rounded-lg z-10 border border-gray-200 min-w-48">
-                <li>
-                  <Link to="/general" className="block px-4 py-3 hover:bg-sky-50 text-gray-700 hover:text-sky-600 transition-colors">
-                    General Knowledge
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/aptitude" className="block px-4 py-3 hover:bg-sky-50 text-gray-700 hover:text-sky-600 transition-colors">
-                    Aptitude
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/technical" className="block px-4 py-3 hover:bg-sky-50 text-gray-700 hover:text-sky-600 transition-colors">
-                    Technical
-                  </Link>
-                </li>
-              </ul>
-            </li>
+            
 
             <li>
               <Link to="/leaderboard" className="block py-2 px-3 hover:text-sky-600 transition-colors duration-200">

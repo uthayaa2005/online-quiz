@@ -7,8 +7,18 @@ const Admin = () => {
         <p className="mt-4 text-center text-sm text-gray-600">
           Use the navigation links to manage users, quizzes, and more.
         </p>
+        <div className="mt-6">
+          <ul className="space-y-4">
+            <li>
+              <a href="/addquestion" className="text-blue-600 hover:underline">
+                Add Question
+              </a>
+            </li>
+          
+          </ul>
       </div>
     </div>
+  </div>
   );
 }
 export default Admin;

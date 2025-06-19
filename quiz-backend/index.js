@@ -2,8 +2,10 @@ const express = require('express');
 const dotenv = require("dotenv");
 const cors = require("cors");
 const mdb = require("mongoose");
+
 const signupController = require("./controllers/Signup");
 const loginController = require("./controllers/Login");
+const questionController = require("./controllers/questionController");
 
 const app = express();
 
@@ -24,8 +26,10 @@ app.get('/', (req, res) => {
     res.send("Welcome to June Session of Backend Server");
 });
 
+// Keep all routes under /api
 app.use('/', signupController);
 app.use('/', loginController);
+app.use('/', questionController);
 
 app.listen(PORT, () => {
     console.log(`Server is running successfully on port ${PORT}`);
