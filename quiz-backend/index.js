@@ -16,21 +16,26 @@ dotenv.config();
 
 const PORT = process.env.PORT || 8000;
 
+// MongoDB Connection
 mdb.connect(process.env.MONGO_URL).then(() => {
     console.log("MongoDB Connection Successful");
 }).catch((err) => {
     console.log("MongoDB Connection Unsuccessful", err);
 });
 
+// Test route
 app.get('/', (req, res) => {
     res.send("Welcome to June Session of Backend Server");
 });
 
-// Keep all routes under /api
+// Auth Routes (Keep as is)
 app.use('/', signupController);
 app.use('/', loginController);
+
+// Quiz/Question Routes (NEW)
 app.use('/', questionController);
 
+// Start Server
 app.listen(PORT, () => {
     console.log(`Server is running successfully on port ${PORT}`);
 });

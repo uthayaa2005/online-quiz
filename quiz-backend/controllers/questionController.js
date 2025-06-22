@@ -2,7 +2,6 @@ const express = require("express");
 const router = express.Router();
 const Question = require("../models/questionSchema");
 
-// ➕ Add Question (already present)
 router.post("/add-question", async (req, res) => {
   const { question, options, correctAnswerIndex } = req.body;
 
@@ -18,12 +17,7 @@ router.post("/add-question", async (req, res) => {
   }
 
   try {
-    const newQuestion = new Question({
-      question,
-      options,
-      correctAnswerIndex,
-    });
-
+    const newQuestion = new Question({ question, options, correctAnswerIndex });
     await newQuestion.save();
     res.status(201).json({ message: "Question added successfully" });
   } catch (err) {
@@ -31,7 +25,6 @@ router.post("/add-question", async (req, res) => {
     res.status(500).json({ message: "Internal Server Error" });
   }
 });
-
 
 router.get("/questions", async (req, res) => {
   try {
@@ -43,7 +36,6 @@ router.get("/questions", async (req, res) => {
   }
 });
 
-// ❌ Delete a question by ID
 router.delete("/question/:id", async (req, res) => {
   try {
     const result = await Question.findByIdAndDelete(req.params.id);
